@@ -11,8 +11,9 @@ export default {
                 'Frango',
                 'Arroz',
                 'Feijão',
-                'Alho' teste
-            ]
+                'Alho',
+                'Farinha'
+            ] 
         }
 
     }
