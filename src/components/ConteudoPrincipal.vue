@@ -1,44 +1,52 @@
 <script lang="ts">
-export default { 
-    data() {
-        return {
-            ingredientes : [
-                'Tomate',
-                'Cebola',
-                'Alface',
-                'Queijo',
-                'Pão',
-                'Frango',
-                'Arroz',
-                'Feijão',
-                'Alho',
-                'Farinha'
-            ] 
-        }
 
+import SelecionarIngredientes from './SelecionarIngredientes.vue';
+
+export default {
+  data() {
+    return {
+      ingredientes: [
+        'Tomate',
+        'Cebola',
+        'Alface',
+        'Queijo',
+        'Pão',
+        'Frango',
+        'Arroz',
+        'Feijão',
+        'Alho',
+        'Farinha'
+      ]
     }
- }
-
-
+  },
+        components: { SelecionarIngredientes }
+}
 
 </script>
 
 <template>
-    <main class="conteudo-principal">
+  <main class="conteudo-principal">
 
-        <section>
-            <span class="subtitulo-lg sua-lista-texto">
-                Sua lista :
-            </span>
+    <section>
+      <span class="subtitulo-lg sua-lista-texto">
+        Sua lista :
+      </span>
 
-            <ul class="ingredientes-sua-lista">
-                <li v-for = "ingrediente in ingredientes" :key="ingrediente" class="ingrediente">
-                    {{ ingrediente }}
-                </li>
-            </ul>
+      <ul v-if="ingredientes.length" class="ingredientes-sua-lista">
+        <li v-for="ingrediente in ingredientes" :key="ingrediente" class="ingrediente">
+          {{ ingrediente }}
+        </li>
+      </ul>
 
-        </section>
-    </main>
+      <p v-else class="paragrafo lista-vazia">
+        <img src="@\assets\imagens-main\imagens-main\images\icones\lista-vazia.svg" alt="" class="Icone_de_pesquisa">
+        Sua lista está vazia. Adicione ingredientes para começar a cozinhar!
+      </p>
+
+    </section>
+
+    <SelecionarIngredientes />
+  </main>
 </template>
 C:\Users\Otavi\cookin-up\.vscode
 
@@ -75,8 +83,8 @@ C:\Users\Otavi\cookin-up\.vscode
   min-width: 4.25rem;
   padding: 0.5rem;
   text-align: center;
-    transition: 0.2s;
-    color: var(--creme, #FFFAF3);
+  transition: 0.2s;
+  color: var(--creme, #FFFAF3);
   background: var(--coral, #F0633C);
   font-weight: 700;
 }
