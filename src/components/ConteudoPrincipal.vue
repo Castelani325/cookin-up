@@ -42,13 +42,15 @@ export default {
         <img src="@\assets\imagens-main\imagens-main\images\icones\lista-vazia.svg" alt="" class="Icone_de_pesquisa">
         Sua lista está vazia. Adicione ingredientes para começar a cozinhar!
       </p>
+      
+      <selecionar-ingredientes />
 
     </section>
 
-    <SelecionarIngredientes />
+    
   </main>
 </template>
-C:\Users\Otavi\cookin-up\.vscode
+
 
 <style scoped>
 .conteudo-principal {
